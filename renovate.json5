@@ -16,6 +16,7 @@
     },
     {
       description: 'Stable & unstable Angular bumps in test fixtures',
+      groupName: 'Angular packages',
       matchFileNames: ['tests/**/fixtures/**/package.json'],
       // See https://docs.renovatebot.com/presets-monorepo/#monorepoangular and https://docs.renovatebot.com/presets-monorepo/#monorepoangular-cli.
       // packages from both monorepos should be bumped together
