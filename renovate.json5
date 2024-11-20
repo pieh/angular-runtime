@@ -22,6 +22,13 @@
       // See https://docs.renovatebot.com/presets-monorepo/#monorepoangular and https://docs.renovatebot.com/presets-monorepo/#monorepoangular-cli.
       // packages from both monorepos should be bumped together
       matchSourceUrls: ['https://github.com/angular/angular', 'https://github.com/angular/angular-cli'],
+      matchPackageNames: ['@angular/core'],
+      postUpgradeTasks: {
+        commands: [
+          'npm ci --ignore-scripts',
+          'npx ng update @angular/core@{{{newVersion}}} @angular/cli@{{{newVersion}}} --migrate-only --allow-dirty --force',
+        ],
+      },
       // Override the schedule to get immediate PRs.
       schedule: null,
       // Apply a unique label so we can trigger additional workflows for these PRs.
