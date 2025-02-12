@@ -6,6 +6,8 @@
   semanticCommits: true,
   // The config we're extending ignores test dirs, but we want to bump some fixture deps
   ignorePaths: ['**/node_modules/**'],
+  // We creating our own package rule that bundles those two together, so let's avoid separate ones
+  ignorePresets: ['monorepo:angular', 'monorepo:angular-cli'],
   packageRules: [
     // Since we've enabled Renovate (see above) for fixture sites, adjust the config for these.
     {
